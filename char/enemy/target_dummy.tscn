@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://cv2ksi2a78qcw"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://d1ea4arqh2h2o" path="res://char_physics_material.tres" id="1_qnvh0"]
+[ext_resource type="Script" path="res://char/enemy/target_dummy.gd" id="1_xgil8"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l0vvg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_romv4"]
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_kmqli"]
+material = SubResource("StandardMaterial3D_romv4")
+
+[node name="target_dummy" type="RigidBody3D" groups=["enemy_team"]]
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+mass = 85.0
+physics_material_override = ExtResource("1_qnvh0")
+can_sleep = false
+script = ExtResource("1_xgil8")
+
+[node name="collider" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_l0vvg")
+
+[node name="capsule" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_kmqli")
+
+[node name="nav" type="NavigationAgent3D" parent="."]
+
+[connection signal="navigation_finished" from="nav" to="." method="_on_nav_navigation_finished"]

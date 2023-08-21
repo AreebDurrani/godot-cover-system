@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1mvr03br1df"]
+
+[ext_resource type="Script" path="res://env/cover_point.gd" id="2_3ypvm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1ud0j"]
+size = Vector3(10, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4br17"]
+
+[node name="cover" type="StaticBody3D"]
+
+[node name="static_box" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_1ud0j")
+
+[node name="box" type="MeshInstance3D" parent="static_box"]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_4br17")
+skeleton = NodePath("../..")
+
+[node name="cover_points" type="Node3D" parent="."]
+
+[node name="cover_point" type="Marker3D" parent="cover_points" groups=["coverpoint"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.13625)
+script = ExtResource("2_3ypvm")
+
+[node name="cover_point2" type="Marker3D" parent="cover_points" groups=["coverpoint"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.96202, 0, 1.13625)
+script = ExtResource("2_3ypvm")
+
+[node name="cover_point10" type="Marker3D" parent="cover_points" groups=["coverpoint"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.04549, 0, 1.13625)
+script = ExtResource("2_3ypvm")
+
+[node name="cover_point5" type="Marker3D" parent="cover_points" groups=["coverpoint"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.02234, 0, 1.13625)
+script = ExtResource("2_3ypvm")
+
+[node name="cover_point3" type="Marker3D" parent="cover_points" groups=["coverpoint"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.00182, 0, 1.13625)
+script = ExtResource("2_3ypvm")
+
+[node name="cover_point4" type="Marker3D" parent="cover_points" groups=["coverpoint"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.00477)
+script = ExtResource("2_3ypvm")
+
+[node name="cover_point6" type="Marker3D" parent="cover_points" groups=["coverpoint"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.96202, 0, -1.00477)
+script = ExtResource("2_3ypvm")
+
+[node name="cover_point11" type="Marker3D" parent="cover_points" groups=["coverpoint"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.04549, 0, -1.00477)
+script = ExtResource("2_3ypvm")
+
+[node name="cover_point7" type="Marker3D" parent="cover_points" groups=["coverpoint"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.02234, 0, -1.00477)
+script = ExtResource("2_3ypvm")
+
+[node name="cover_point8" type="Marker3D" parent="cover_points" groups=["coverpoint"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.00182, 0, -1.00477)
+script = ExtResource("2_3ypvm")
